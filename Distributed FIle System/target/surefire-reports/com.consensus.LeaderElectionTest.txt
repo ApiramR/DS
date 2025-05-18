@@ -1,0 +1,8 @@
+-------------------------------------------------------------------------------
+Test set: com.consensus.LeaderElectionTest
+-------------------------------------------------------------------------------
+Tests run: 3, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 12.098 s <<< FAILURE! - in com.consensus.LeaderElectionTest
+testLeaderFailureAndReelection  Time elapsed: 6.945 s  <<< FAILURE!
+org.opentest4j.AssertionFailedError: A new leader should be elected after failure ==> expected: <true> but was: <false>
+	at com.consensus.LeaderElectionTest.testLeaderFailureAndReelection(LeaderElectionTest.java:109)
+

@@ -1,0 +1,8 @@
+com\timesync\TimeSynchronizationTest.class
+com\DistributedFileSystemEndToEndTest.class
+com\DistributedFileSystemPerformanceTest.class
+com\server\ServerHealthCheckerTest.class
+com\DistributedFileSystemIntegrationTest.class
+com\consensus\LeaderElectionTest.class
+com\server\ServerFailureTest.class
+com\server\ChunkServerTest.class

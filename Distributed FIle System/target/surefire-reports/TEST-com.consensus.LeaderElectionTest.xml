@@ -1,0 +1,525 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" name="com.consensus.LeaderElectionTest" time="12.098" tests="3" errors="0" skipped="0" failures="1">
+  <properties>
+    <property name="java.specification.version" value="21"/>
+    <property name="sun.cpu.isalist" value="amd64"/>
+    <property name="sun.jnu.encoding" value="Cp1252"/>
+    <property name="java.class.path" value="C:\Users\Apiram Rajamohan\Desktop\projects\Distributed FIle System\target\test-classes;C:\Users\Apiram Rajamohan\Desktop\projects\Distributed FIle System\target\classes;C:\Users\Apiram Rajamohan\.m2\repository\com\fasterxml\jackson\core\jackson-databind\2.12.5\jackson-databind-2.12.5.jar;C:\Users\Apiram Rajamohan\.m2\repository\com\fasterxml\jackson\core\jackson-core\2.12.5\jackson-core-2.12.5.jar;C:\Users\Apiram Rajamohan\.m2\repository\com\fasterxml\jackson\core\jackson-annotations\2.12.5\jackson-annotations-2.12.5.jar;C:\Users\Apiram Rajamohan\.m2\repository\org\junit\jupiter\junit-jupiter\5.10.0\junit-jupiter-5.10.0.jar;C:\Users\Apiram Rajamohan\.m2\repository\org\junit\jupiter\junit-jupiter-api\5.10.0\junit-jupiter-api-5.10.0.jar;C:\Users\Apiram Rajamohan\.m2\repository\org\opentest4j\opentest4j\1.3.0\opentest4j-1.3.0.jar;C:\Users\Apiram Rajamohan\.m2\repository\org\junit\platform\junit-platform-commons\1.10.0\junit-platform-commons-1.10.0.jar;C:\Users\Apiram Rajamohan\.m2\repository\org\apiguardian\apiguardian-api\1.1.2\apiguardian-api-1.1.2.jar;C:\Users\Apiram Rajamohan\.m2\repository\org\junit\jupiter\junit-jupiter-params\5.10.0\junit-jupiter-params-5.10.0.jar;C:\Users\Apiram Rajamohan\.m2\repository\org\junit\jupiter\junit-jupiter-engine\5.10.0\junit-jupiter-engine-5.10.0.jar;C:\Users\Apiram Rajamohan\.m2\repository\org\junit\platform\junit-platform-engine\1.10.0\junit-platform-engine-1.10.0.jar;"/>
+    <property name="java.vm.vendor" value="Oracle Corporation"/>
+    <property name="sun.arch.data.model" value="64"/>
+    <property name="user.variant" value=""/>
+    <property name="java.vendor.url" value="https://java.oracle.com/"/>
+    <property name="user.timezone" value="Asia/Colombo"/>
+    <property name="os.name" value="Windows 11"/>
+    <property name="java.vm.specification.version" value="21"/>
+    <property name="sun.java.launcher" value="SUN_STANDARD"/>
+    <property name="user.country" value="US"/>
+    <property name="sun.boot.library.path" value="C:\Program Files\Java\jdk-21\bin"/>
+    <property name="sun.java.command" value="C:\Users\APIRAM~1\AppData\Local\Temp\surefire1542123916561559819\surefirebooter14080096053377829565.jar C:\Users\Apiram Rajamohan\AppData\Local\Temp\surefire1542123916561559819 2025-05-18T23-47-49_137-jvmRun1 surefire17022012264375125619tmp surefire_010902203360427183974tmp"/>
+    <property name="jdk.debug" value="release"/>
+    <property name="surefire.test.class.path" value="C:\Users\Apiram Rajamohan\Desktop\projects\Distributed FIle System\target\test-classes;C:\Users\Apiram Rajamohan\Desktop\projects\Distributed FIle System\target\classes;C:\Users\Apiram Rajamohan\.m2\repository\com\fasterxml\jackson\core\jackson-databind\2.12.5\jackson-databind-2.12.5.jar;C:\Users\Apiram Rajamohan\.m2\repository\com\fasterxml\jackson\core\jackson-core\2.12.5\jackson-core-2.12.5.jar;C:\Users\Apiram Rajamohan\.m2\repository\com\fasterxml\jackson\core\jackson-annotations\2.12.5\jackson-annotations-2.12.5.jar;C:\Users\Apiram Rajamohan\.m2\repository\org\junit\jupiter\junit-jupiter\5.10.0\junit-jupiter-5.10.0.jar;C:\Users\Apiram Rajamohan\.m2\repository\org\junit\jupiter\junit-jupiter-api\5.10.0\junit-jupiter-api-5.10.0.jar;C:\Users\Apiram Rajamohan\.m2\repository\org\opentest4j\opentest4j\1.3.0\opentest4j-1.3.0.jar;C:\Users\Apiram Rajamohan\.m2\repository\org\junit\platform\junit-platform-commons\1.10.0\junit-platform-commons-1.10.0.jar;C:\Users\Apiram Rajamohan\.m2\repository\org\apiguardian\apiguardian-api\1.1.2\apiguardian-api-1.1.2.jar;C:\Users\Apiram Rajamohan\.m2\repository\org\junit\jupiter\junit-jupiter-params\5.10.0\junit-jupiter-params-5.10.0.jar;C:\Users\Apiram Rajamohan\.m2\repository\org\junit\jupiter\junit-jupiter-engine\5.10.0\junit-jupiter-engine-5.10.0.jar;C:\Users\Apiram Rajamohan\.m2\repository\org\junit\platform\junit-platform-engine\1.10.0\junit-platform-engine-1.10.0.jar;"/>
+    <property name="sun.cpu.endian" value="little"/>
+    <property name="user.home" value="C:\Users\Apiram Rajamohan"/>
+    <property name="user.language" value="en"/>
+    <property name="java.specification.vendor" value="Oracle Corporation"/>
+    <property name="java.version.date" value="2025-04-15"/>
+    <property name="java.home" value="C:\Program Files\Java\jdk-21"/>
+    <property name="file.separator" value="\"/>
+    <property name="basedir" value="C:\Users\Apiram Rajamohan\Desktop\projects\Distributed FIle System"/>
+    <property name="java.vm.compressedOopsMode" value="Zero based"/>
+    <property name="line.separator" value="&#10;"/>
+    <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
+    <property name="java.specification.name" value="Java Platform API Specification"/>
+    <property name="surefire.real.class.path" value="C:\Users\APIRAM~1\AppData\Local\Temp\surefire1542123916561559819\surefirebooter14080096053377829565.jar"/>
+    <property name="user.script" value=""/>
+    <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
+    <property name="java.runtime.version" value="21.0.7+8-LTS-245"/>
+    <property name="user.name" value="Apiram Rajamohan"/>
+    <property name="stdout.encoding" value="UTF-8"/>
+    <property name="path.separator" value=";"/>
+    <property name="os.version" value="10.0"/>
+    <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
+    <property name="file.encoding" value="UTF-8"/>
+    <property name="java.vm.name" value="Java HotSpot(TM) 64-Bit Server VM"/>
+    <property name="localRepository" value="C:\Users\Apiram Rajamohan\.m2\repository"/>
+    <property name="java.vendor.url.bug" value="https://bugreport.java.com/bugreport/"/>
+    <property name="java.io.tmpdir" value="C:\Users\APIRAM~1\AppData\Local\Temp\"/>
+    <property name="java.version" value="21.0.7"/>
+    <property name="user.dir" value="C:\Users\Apiram Rajamohan\Desktop\projects\Distributed FIle System"/>
+    <property name="os.arch" value="amd64"/>
+    <property name="java.vm.specification.name" value="Java Virtual Machine Specification"/>
+    <property name="sun.os.patch.level" value=""/>
+    <property name="native.encoding" value="Cp1252"/>
+    <property name="java.library.path" value="C:\Program Files\Java\jdk-21\bin;C:\Windows\Sun\Java\bin;C:\Windows\system32;C:\Windows;C:\Program Files\Java\jdk-21\bin;C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v12.9\bin;C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v12.9\libnvvp;C:\Program Files (x86)\Common Files\Intel\Shared Libraries\redist\intel64\compiler;c:\Users\Apiram Rajamohan\AppData\Local\Programs\cursor\resources\app\bin;C:\Program Files\BraveSoftware\Brave-Browser\Application;C:\Program Files\Common Files\Oracle\Java\javapath;C:\Python313\Scripts\;C:\Python313\;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\Program Files\nodejs\;C:\ProgramData\chocolatey\bin;C:\Program Files\dotnet\;C:\Program Files\NVIDIA Corporation\NVIDIA NvDLISR;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Program Files\Git\cmd;C:\Program Files\apache-maven-3.9.9\bin;C:\msys64\mingw64\bin;C:\Users\Apiram Rajamohan\AppData\Local\Microsoft\WindowsApps;C:\Users\Apiram Rajamohan\AppData\Roaming\npm;C:\Program Files\apache-maven-3.9.9\bin;C:\msys64\mingw64\bin;;c:\Users\Apiram Rajamohan\AppData\Local\Programs\cursor\resources\app\bin;C:\Program Files\NVIDIA Corporation\Nsight Compute 2025.2.0\;C:\Program Files\NVIDIA Corporation\NVIDIA App\NvDLISR;C:\Users\Apiram Rajamohan\AppData\Local\Microsoft\WindowsApps;C:\Users\Apiram Rajamohan\AppData\Local\Programs\Microsoft VS Code\bin;C:\Users\Apiram Rajamohan\AppData\Roaming\npm;C:\Program Files\apache-maven-3.9.9\bin;C:\msys64\mingw64\bin;C:\Users\Apiram Rajamohan\AppData\Local\Programs\cursor\resources\app\bin;c:\Users\Apiram Rajamohan\AppData\Roaming\Cursor\User\globalStorage\github.copilot-chat\debugCommand;."/>
+    <property name="java.vm.info" value="mixed mode, sharing"/>
+    <property name="stderr.encoding" value="UTF-8"/>
+    <property name="java.vendor" value="Oracle Corporation"/>
+    <property name="java.vm.version" value="21.0.7+8-LTS-245"/>
+    <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
+    <property name="java.class.version" value="65.0"/>
+  </properties>
+  <testcase name="testLeaderFailureAndReelection" classname="com.consensus.LeaderElectionTest" time="6.945">
+    <failure message="A new leader should be elected after failure ==&gt; expected: &lt;true&gt; but was: &lt;false&gt;" type="org.opentest4j.AssertionFailedError"><![CDATA[org.opentest4j.AssertionFailedError: A new leader should be elected after failure ==> expected: <true> but was: <false>
+	at com.consensus.LeaderElectionTest.testLeaderFailureAndReelection(LeaderElectionTest.java:109)
+]]></failure>
+    <system-err><![CDATA[May 18, 2025 11:47:49 PM com.consensus.RaftConsensus startServer
+INFO: Raft node node1 listening on port 10000
+May 18, 2025 11:47:49 PM com.consensus.RaftConsensus start
+INFO: Raft node node1 started on port 10000
+May 18, 2025 11:47:49 PM com.consensus.RaftConsensus lambda$startElectionTimer$2
+INFO: Node node1 starting election for term 1
+May 18, 2025 11:47:49 PM com.consensus.RaftConsensus startElection
+INFO: Node node1 became candidate for term 1
+May 18, 2025 11:47:49 PM com.consensus.RaftConsensus startServer
+INFO: Raft node node2 listening on port 10001
+May 18, 2025 11:47:49 PM com.consensus.RaftConsensus lambda$getOrCreateSocket$5
+WARNING: Connection attempt 1 failed for peer localhost:10002: Connection refused: getsockopt
+May 18, 2025 11:47:49 PM com.consensus.RaftConsensus handleRequestVote
+INFO: Node node2 updated term to 1
+May 18, 2025 11:47:49 PM com.consensus.RaftConsensus handleRequestVote
+INFO: Node node2 granted vote to node1 for term 1
+May 18, 2025 11:47:49 PM com.consensus.RaftConsensus lambda$startElection$3
+INFO: Node node1 received vote from localhost:10001
+May 18, 2025 11:47:50 PM com.consensus.RaftConsensus start
+INFO: Raft node node2 started on port 10001
+May 18, 2025 11:47:50 PM com.consensus.RaftConsensus lambda$getOrCreateSocket$5
+WARNING: Connection attempt 2 failed for peer localhost:10002: Socket closed
+May 18, 2025 11:47:50 PM com.consensus.RaftConsensus startServer
+INFO: Raft node node3 listening on port 10002
+May 18, 2025 11:47:50 PM com.consensus.RaftConsensus lambda$startElectionTimer$2
+INFO: Node node2 starting election for term 2
+May 18, 2025 11:47:50 PM com.consensus.RaftConsensus startElection
+INFO: Node node2 became candidate for term 2
+May 18, 2025 11:47:50 PM com.consensus.RaftConsensus handleRequestVote
+INFO: Node node1 updated term to 2
+May 18, 2025 11:47:50 PM com.consensus.RaftConsensus handleRequestVote
+INFO: Node node1 granted vote to node2 for term 2
+May 18, 2025 11:47:50 PM com.consensus.RaftConsensus handleRequestVote
+INFO: Node node3 updated term to 2
+May 18, 2025 11:47:50 PM com.consensus.RaftConsensus lambda$startElection$3
+INFO: Node node2 received vote from localhost:10000
+May 18, 2025 11:47:50 PM com.consensus.RaftConsensus handleRequestVote
+INFO: Node node3 granted vote to node2 for term 2
+May 18, 2025 11:47:50 PM com.consensus.RaftConsensus lambda$startElection$3
+INFO: Node node2 received vote from localhost:10002
+May 18, 2025 11:47:50 PM com.consensus.RaftConsensus becomeLeader
+INFO: Node node2 became leader for term 2
+May 18, 2025 11:47:50 PM com.consensus.RaftConsensus sendMessage
+WARNING: Error sending message to peer localhost:10000: An established connection was aborted by the software in your host machine
+May 18, 2025 11:47:50 PM com.consensus.RaftConsensus sendMessage
+WARNING: Error sending message to peer localhost:10002: An established connection was aborted by the software in your host machine
+May 18, 2025 11:47:50 PM com.consensus.RaftConsensus lambda$getOrCreateSocket$5
+WARNING: Connection attempt 3 failed for peer localhost:10002: Socket closed
+May 18, 2025 11:47:50 PM com.consensus.RaftConsensus start
+INFO: Raft node node3 started on port 10002
+May 18, 2025 11:47:50 PM com.consensus.RaftConsensus lambda$startElectionTimer$2
+INFO: Node node2 detected leader failure
+May 18, 2025 11:47:50 PM com.consensus.RaftConsensus lambda$startElectionTimer$2
+INFO: Node node3 starting election for term 3
+May 18, 2025 11:47:50 PM com.consensus.RaftConsensus startElection
+INFO: Node node3 became candidate for term 3
+May 18, 2025 11:47:50 PM com.consensus.RaftConsensus handleRequestVote
+INFO: Node node2 updated term to 3
+May 18, 2025 11:47:50 PM com.consensus.RaftConsensus handleRequestVote
+INFO: Node node2 granted vote to node3 for term 3
+May 18, 2025 11:47:50 PM com.consensus.RaftConsensus handleRequestVote
+INFO: Node node1 updated term to 3
+May 18, 2025 11:47:50 PM com.consensus.RaftConsensus handleRequestVote
+INFO: Node node1 granted vote to node3 for term 3
+May 18, 2025 11:47:50 PM com.consensus.RaftConsensus lambda$startElection$3
+INFO: Node node3 received vote from localhost:10001
+May 18, 2025 11:47:50 PM com.consensus.RaftConsensus lambda$startElection$3
+INFO: Node node3 received vote from localhost:10000
+May 18, 2025 11:47:50 PM com.consensus.RaftConsensus becomeLeader
+INFO: Node node3 became leader for term 3
+May 18, 2025 11:47:50 PM com.consensus.RaftConsensus sendMessage
+WARNING: Error sending message to peer localhost:10000: An established connection was aborted by the software in your host machine
+May 18, 2025 11:47:50 PM com.consensus.RaftConsensus sendMessage
+WARNING: Error sending message to peer localhost:10001: An established connection was aborted by the software in your host machine
+May 18, 2025 11:47:50 PM com.consensus.RaftConsensus stop
+INFO: Raft node node3 stopped
+May 18, 2025 11:47:50 PM com.consensus.RaftConsensus lambda$startElectionTimer$2
+INFO: Node node1 starting election for term 4
+May 18, 2025 11:47:50 PM com.consensus.RaftConsensus startElection
+INFO: Node node1 became candidate for term 4
+May 18, 2025 11:47:50 PM com.consensus.RaftConsensus sendMessage
+WARNING: Error sending message to peer localhost:10002: An established connection was aborted by the software in your host machine
+May 18, 2025 11:47:50 PM com.consensus.RaftConsensus sendMessage
+WARNING: Error sending message to peer localhost:10001: An established connection was aborted by the software in your host machine
+May 18, 2025 11:47:50 PM com.consensus.RaftConsensus lambda$startElectionTimer$2
+INFO: Node node2 starting election for term 4
+May 18, 2025 11:47:50 PM com.consensus.RaftConsensus startElection
+INFO: Node node2 became candidate for term 4
+May 18, 2025 11:47:50 PM com.consensus.RaftConsensus lambda$getOrCreateSocket$5
+WARNING: Connection attempt 1 failed for peer localhost:10002: Connection refused: getsockopt
+May 18, 2025 11:47:50 PM com.consensus.RaftConsensus lambda$getOrCreateSocket$5
+WARNING: Connection attempt 2 failed for peer localhost:10002: Socket closed
+May 18, 2025 11:47:50 PM com.consensus.RaftConsensus lambda$getOrCreateSocket$5
+WARNING: Connection attempt 3 failed for peer localhost:10002: Socket closed
+May 18, 2025 11:47:51 PM com.consensus.RaftConsensus lambda$getOrCreateSocket$5
+WARNING: Connection attempt 1 failed for peer localhost:10002: Connection refused: getsockopt
+May 18, 2025 11:47:51 PM com.consensus.RaftConsensus lambda$startElectionTimer$2
+INFO: Node node1 starting election for term 5
+May 18, 2025 11:47:51 PM com.consensus.RaftConsensus startElection
+INFO: Node node1 became candidate for term 5
+May 18, 2025 11:47:51 PM com.consensus.RaftConsensus handleRequestVote
+INFO: Node node2 updated term to 5
+May 18, 2025 11:47:51 PM com.consensus.RaftConsensus handleRequestVote
+INFO: Node node2 granted vote to node1 for term 5
+May 18, 2025 11:47:51 PM com.consensus.RaftConsensus lambda$startElection$3
+INFO: Node node1 received vote from localhost:10001
+May 18, 2025 11:47:51 PM com.consensus.RaftConsensus lambda$getOrCreateSocket$5
+WARNING: Connection attempt 1 failed for peer localhost:10002: Connection refused: getsockopt
+May 18, 2025 11:47:51 PM com.consensus.RaftConsensus lambda$getOrCreateSocket$5
+WARNING: Connection attempt 2 failed for peer localhost:10002: Socket closed
+May 18, 2025 11:47:51 PM com.consensus.RaftConsensus lambda$getOrCreateSocket$5
+WARNING: Connection attempt 2 failed for peer localhost:10002: Socket closed
+May 18, 2025 11:47:51 PM com.consensus.RaftConsensus lambda$getOrCreateSocket$5
+WARNING: Connection attempt 3 failed for peer localhost:10002: Socket closed
+May 18, 2025 11:47:51 PM com.consensus.RaftConsensus lambda$startElectionTimer$2
+INFO: Node node2 starting election for term 6
+May 18, 2025 11:47:51 PM com.consensus.RaftConsensus startElection
+INFO: Node node2 became candidate for term 6
+May 18, 2025 11:47:51 PM com.consensus.RaftConsensus sendMessage
+WARNING: Error sending message to peer localhost:10000: An established connection was aborted by the software in your host machine
+May 18, 2025 11:47:51 PM com.consensus.RaftConsensus lambda$getOrCreateSocket$5
+WARNING: Connection attempt 3 failed for peer localhost:10002: Socket closed
+May 18, 2025 11:47:51 PM com.consensus.RaftConsensus lambda$getOrCreateSocket$5
+WARNING: Connection attempt 1 failed for peer localhost:10002: Connection refused: getsockopt
+May 18, 2025 11:47:51 PM com.consensus.RaftConsensus lambda$getOrCreateSocket$5
+WARNING: Connection attempt 1 failed for peer localhost:10002: Connection refused: getsockopt
+May 18, 2025 11:47:51 PM com.consensus.RaftConsensus lambda$getOrCreateSocket$5
+WARNING: Connection attempt 2 failed for peer localhost:10002: Socket closed
+May 18, 2025 11:47:51 PM com.consensus.RaftConsensus lambda$getOrCreateSocket$5
+WARNING: Connection attempt 2 failed for peer localhost:10002: Socket closed
+May 18, 2025 11:47:51 PM com.consensus.RaftConsensus lambda$startElectionTimer$2
+INFO: Node node1 starting election for term 6
+May 18, 2025 11:47:51 PM com.consensus.RaftConsensus startElection
+INFO: Node node1 became candidate for term 6
+May 18, 2025 11:47:51 PM com.consensus.RaftConsensus sendMessage
+WARNING: Error sending message to peer localhost:10001: An established connection was aborted by the software in your host machine
+May 18, 2025 11:47:51 PM com.consensus.RaftConsensus lambda$getOrCreateSocket$5
+WARNING: Connection attempt 3 failed for peer localhost:10002: Socket closed
+May 18, 2025 11:47:51 PM com.consensus.RaftConsensus lambda$getOrCreateSocket$5
+WARNING: Connection attempt 3 failed for peer localhost:10002: Socket closed
+May 18, 2025 11:47:51 PM com.consensus.RaftConsensus lambda$getOrCreateSocket$5
+WARNING: Connection attempt 1 failed for peer localhost:10002: Connection refused: getsockopt
+May 18, 2025 11:47:51 PM com.consensus.RaftConsensus lambda$getOrCreateSocket$5
+WARNING: Connection attempt 1 failed for peer localhost:10002: Connection refused: getsockopt
+May 18, 2025 11:47:51 PM com.consensus.RaftConsensus lambda$startElectionTimer$2
+INFO: Node node2 starting election for term 7
+May 18, 2025 11:47:51 PM com.consensus.RaftConsensus startElection
+INFO: Node node2 became candidate for term 7
+May 18, 2025 11:47:51 PM com.consensus.RaftConsensus handleRequestVote
+INFO: Node node1 updated term to 7
+May 18, 2025 11:47:51 PM com.consensus.RaftConsensus handleRequestVote
+INFO: Node node1 granted vote to node2 for term 7
+May 18, 2025 11:47:51 PM com.consensus.RaftConsensus lambda$startElection$3
+INFO: Node node2 received vote from localhost:10000
+May 18, 2025 11:47:51 PM com.consensus.RaftConsensus lambda$getOrCreateSocket$5
+WARNING: Connection attempt 2 failed for peer localhost:10002: Socket closed
+May 18, 2025 11:47:51 PM com.consensus.RaftConsensus lambda$getOrCreateSocket$5
+WARNING: Connection attempt 2 failed for peer localhost:10002: Socket closed
+May 18, 2025 11:47:52 PM com.consensus.RaftConsensus lambda$getOrCreateSocket$5
+WARNING: Connection attempt 3 failed for peer localhost:10002: Socket closed
+May 18, 2025 11:47:52 PM com.consensus.RaftConsensus lambda$getOrCreateSocket$5
+WARNING: Connection attempt 3 failed for peer localhost:10002: Socket closed
+May 18, 2025 11:47:52 PM com.consensus.RaftConsensus lambda$getOrCreateSocket$5
+WARNING: Connection attempt 1 failed for peer localhost:10002: Connection refused: getsockopt
+May 18, 2025 11:47:52 PM com.consensus.RaftConsensus lambda$startElectionTimer$2
+INFO: Node node1 starting election for term 8
+May 18, 2025 11:47:52 PM com.consensus.RaftConsensus startElection
+INFO: Node node1 became candidate for term 8
+May 18, 2025 11:47:52 PM com.consensus.RaftConsensus handleRequestVote
+INFO: Node node2 updated term to 8
+May 18, 2025 11:47:52 PM com.consensus.RaftConsensus handleRequestVote
+INFO: Node node2 granted vote to node1 for term 8
+May 18, 2025 11:47:52 PM com.consensus.RaftConsensus lambda$startElection$3
+INFO: Node node1 received vote from localhost:10001
+May 18, 2025 11:47:52 PM com.consensus.RaftConsensus lambda$getOrCreateSocket$5
+WARNING: Connection attempt 2 failed for peer localhost:10002: Socket closed
+May 18, 2025 11:47:52 PM com.consensus.RaftConsensus lambda$getOrCreateSocket$5
+WARNING: Connection attempt 1 failed for peer localhost:10002: Connection refused: getsockopt
+May 18, 2025 11:47:52 PM com.consensus.RaftConsensus lambda$getOrCreateSocket$5
+WARNING: Connection attempt 2 failed for peer localhost:10002: Socket closed
+May 18, 2025 11:47:52 PM com.consensus.RaftConsensus lambda$getOrCreateSocket$5
+WARNING: Connection attempt 3 failed for peer localhost:10002: Socket closed
+May 18, 2025 11:47:52 PM com.consensus.RaftConsensus lambda$getOrCreateSocket$5
+WARNING: Connection attempt 1 failed for peer localhost:10002: Connection refused: getsockopt
+May 18, 2025 11:47:52 PM com.consensus.RaftConsensus lambda$getOrCreateSocket$5
+WARNING: Connection attempt 3 failed for peer localhost:10002: Socket closed
+May 18, 2025 11:47:52 PM com.consensus.RaftConsensus lambda$startElectionTimer$2
+INFO: Node node2 starting election for term 9
+May 18, 2025 11:47:52 PM com.consensus.RaftConsensus startElection
+INFO: Node node2 became candidate for term 9
+May 18, 2025 11:47:52 PM com.consensus.RaftConsensus sendMessage
+WARNING: Error sending message to peer localhost:10000: An established connection was aborted by the software in your host machine
+May 18, 2025 11:47:52 PM com.consensus.RaftConsensus lambda$getOrCreateSocket$5
+WARNING: Connection attempt 1 failed for peer localhost:10002: Connection refused: getsockopt
+May 18, 2025 11:47:52 PM com.consensus.RaftConsensus lambda$getOrCreateSocket$5
+WARNING: Connection attempt 2 failed for peer localhost:10002: Socket closed
+May 18, 2025 11:47:52 PM com.consensus.RaftConsensus lambda$getOrCreateSocket$5
+WARNING: Connection attempt 2 failed for peer localhost:10002: Socket closed
+May 18, 2025 11:47:52 PM com.consensus.RaftConsensus lambda$startElectionTimer$2
+INFO: Node node1 starting election for term 9
+May 18, 2025 11:47:52 PM com.consensus.RaftConsensus startElection
+INFO: Node node1 became candidate for term 9
+May 18, 2025 11:47:52 PM com.consensus.RaftConsensus sendMessage
+WARNING: Error sending message to peer localhost:10001: An established connection was aborted by the software in your host machine
+May 18, 2025 11:47:52 PM com.consensus.RaftConsensus lambda$getOrCreateSocket$5
+WARNING: Connection attempt 3 failed for peer localhost:10002: Socket closed
+May 18, 2025 11:47:52 PM com.consensus.RaftConsensus lambda$getOrCreateSocket$5
+WARNING: Connection attempt 3 failed for peer localhost:10002: Socket closed
+May 18, 2025 11:47:52 PM com.consensus.RaftConsensus lambda$getOrCreateSocket$5
+WARNING: Connection attempt 1 failed for peer localhost:10002: Connection refused: getsockopt
+May 18, 2025 11:47:52 PM com.consensus.RaftConsensus lambda$getOrCreateSocket$5
+WARNING: Connection attempt 1 failed for peer localhost:10002: Connection refused: getsockopt
+May 18, 2025 11:47:52 PM com.consensus.RaftConsensus lambda$getOrCreateSocket$5
+WARNING: Connection attempt 2 failed for peer localhost:10002: Socket closed
+May 18, 2025 11:47:53 PM com.consensus.RaftConsensus lambda$startElectionTimer$2
+INFO: Node node2 starting election for term 10
+May 18, 2025 11:47:53 PM com.consensus.RaftConsensus lambda$getOrCreateSocket$5
+WARNING: Connection attempt 2 failed for peer localhost:10002: Socket closed
+May 18, 2025 11:47:53 PM com.consensus.RaftConsensus startElection
+INFO: Node node2 became candidate for term 10
+May 18, 2025 11:47:53 PM com.consensus.RaftConsensus handleRequestVote
+INFO: Node node1 updated term to 10
+May 18, 2025 11:47:53 PM com.consensus.RaftConsensus handleRequestVote
+INFO: Node node1 granted vote to node2 for term 10
+May 18, 2025 11:47:53 PM com.consensus.RaftConsensus lambda$startElection$3
+INFO: Node node2 received vote from localhost:10000
+May 18, 2025 11:47:53 PM com.consensus.RaftConsensus lambda$getOrCreateSocket$5
+WARNING: Connection attempt 3 failed for peer localhost:10002: Socket closed
+May 18, 2025 11:47:53 PM com.consensus.RaftConsensus lambda$getOrCreateSocket$5
+WARNING: Connection attempt 3 failed for peer localhost:10002: Socket closed
+May 18, 2025 11:47:53 PM com.consensus.RaftConsensus lambda$getOrCreateSocket$5
+WARNING: Connection attempt 1 failed for peer localhost:10002: Connection refused: getsockopt
+May 18, 2025 11:47:53 PM com.consensus.RaftConsensus lambda$startElectionTimer$2
+INFO: Node node1 starting election for term 11
+May 18, 2025 11:47:53 PM com.consensus.RaftConsensus startElection
+INFO: Node node1 became candidate for term 11
+May 18, 2025 11:47:53 PM com.consensus.RaftConsensus handleRequestVote
+INFO: Node node2 updated term to 11
+May 18, 2025 11:47:53 PM com.consensus.RaftConsensus handleRequestVote
+INFO: Node node2 granted vote to node1 for term 11
+May 18, 2025 11:47:53 PM com.consensus.RaftConsensus lambda$startElection$3
+INFO: Node node1 received vote from localhost:10001
+May 18, 2025 11:47:53 PM com.consensus.RaftConsensus lambda$getOrCreateSocket$5
+WARNING: Connection attempt 2 failed for peer localhost:10002: Socket closed
+May 18, 2025 11:47:53 PM com.consensus.RaftConsensus lambda$getOrCreateSocket$5
+WARNING: Connection attempt 1 failed for peer localhost:10002: Connection refused: getsockopt
+May 18, 2025 11:47:53 PM com.consensus.RaftConsensus lambda$getOrCreateSocket$5
+WARNING: Connection attempt 2 failed for peer localhost:10002: Socket closed
+May 18, 2025 11:47:53 PM com.consensus.RaftConsensus lambda$getOrCreateSocket$5
+WARNING: Connection attempt 3 failed for peer localhost:10002: Socket closed
+May 18, 2025 11:47:53 PM com.consensus.RaftConsensus lambda$startElectionTimer$2
+INFO: Node node2 starting election for term 12
+May 18, 2025 11:47:53 PM com.consensus.RaftConsensus startElection
+INFO: Node node2 became candidate for term 12
+May 18, 2025 11:47:53 PM com.consensus.RaftConsensus sendMessage
+WARNING: Error sending message to peer localhost:10000: An established connection was aborted by the software in your host machine
+May 18, 2025 11:47:53 PM com.consensus.RaftConsensus lambda$getOrCreateSocket$5
+WARNING: Connection attempt 1 failed for peer localhost:10002: Connection refused: getsockopt
+May 18, 2025 11:47:53 PM com.consensus.RaftConsensus lambda$getOrCreateSocket$5
+WARNING: Connection attempt 3 failed for peer localhost:10002: Socket closed
+May 18, 2025 11:47:53 PM com.consensus.RaftConsensus lambda$getOrCreateSocket$5
+WARNING: Connection attempt 1 failed for peer localhost:10002: Connection refused: getsockopt
+May 18, 2025 11:47:53 PM com.consensus.RaftConsensus lambda$getOrCreateSocket$5
+WARNING: Connection attempt 2 failed for peer localhost:10002: Socket closed
+May 18, 2025 11:47:53 PM com.consensus.RaftConsensus lambda$getOrCreateSocket$5
+WARNING: Connection attempt 2 failed for peer localhost:10002: Socket closed
+May 18, 2025 11:47:53 PM com.consensus.RaftConsensus lambda$startElectionTimer$2
+INFO: Node node1 starting election for term 12
+May 18, 2025 11:47:53 PM com.consensus.RaftConsensus startElection
+INFO: Node node1 became candidate for term 12
+May 18, 2025 11:47:53 PM com.consensus.RaftConsensus sendMessage
+WARNING: Error sending message to peer localhost:10001: An established connection was aborted by the software in your host machine
+May 18, 2025 11:47:53 PM com.consensus.RaftConsensus lambda$getOrCreateSocket$5
+WARNING: Connection attempt 3 failed for peer localhost:10002: Socket closed
+May 18, 2025 11:47:53 PM com.consensus.RaftConsensus lambda$getOrCreateSocket$5
+WARNING: Connection attempt 3 failed for peer localhost:10002: Socket closed
+May 18, 2025 11:47:54 PM com.consensus.RaftConsensus lambda$getOrCreateSocket$5
+WARNING: Connection attempt 1 failed for peer localhost:10002: Connection refused: getsockopt
+May 18, 2025 11:47:54 PM com.consensus.RaftConsensus lambda$getOrCreateSocket$5
+WARNING: Connection attempt 1 failed for peer localhost:10002: Connection refused: getsockopt
+May 18, 2025 11:47:54 PM com.consensus.RaftConsensus lambda$startElectionTimer$2
+INFO: Node node2 starting election for term 13
+May 18, 2025 11:47:54 PM com.consensus.RaftConsensus startElection
+INFO: Node node2 became candidate for term 13
+May 18, 2025 11:47:54 PM com.consensus.RaftConsensus handleRequestVote
+INFO: Node node1 updated term to 13
+May 18, 2025 11:47:54 PM com.consensus.RaftConsensus handleRequestVote
+INFO: Node node1 granted vote to node2 for term 13
+May 18, 2025 11:47:54 PM com.consensus.RaftConsensus lambda$startElection$3
+INFO: Node node2 received vote from localhost:10000
+May 18, 2025 11:47:54 PM com.consensus.RaftConsensus lambda$getOrCreateSocket$5
+WARNING: Connection attempt 2 failed for peer localhost:10002: Socket closed
+May 18, 2025 11:47:54 PM com.consensus.RaftConsensus lambda$getOrCreateSocket$5
+WARNING: Connection attempt 2 failed for peer localhost:10002: Socket closed
+May 18, 2025 11:47:54 PM com.consensus.RaftConsensus lambda$getOrCreateSocket$5
+WARNING: Connection attempt 3 failed for peer localhost:10002: Socket closed
+May 18, 2025 11:47:54 PM com.consensus.RaftConsensus lambda$getOrCreateSocket$5
+WARNING: Connection attempt 3 failed for peer localhost:10002: Socket closed
+May 18, 2025 11:47:54 PM com.consensus.RaftConsensus lambda$getOrCreateSocket$5
+WARNING: Connection attempt 1 failed for peer localhost:10002: Connection refused: getsockopt
+May 18, 2025 11:47:54 PM com.consensus.RaftConsensus lambda$startElectionTimer$2
+INFO: Node node1 starting election for term 14
+May 18, 2025 11:47:54 PM com.consensus.RaftConsensus startElection
+INFO: Node node1 became candidate for term 14
+May 18, 2025 11:47:54 PM com.consensus.RaftConsensus handleRequestVote
+INFO: Node node2 updated term to 14
+May 18, 2025 11:47:54 PM com.consensus.RaftConsensus handleRequestVote
+INFO: Node node2 granted vote to node1 for term 14
+May 18, 2025 11:47:54 PM com.consensus.RaftConsensus lambda$startElection$3
+INFO: Node node1 received vote from localhost:10001
+May 18, 2025 11:47:54 PM com.consensus.RaftConsensus lambda$getOrCreateSocket$5
+WARNING: Connection attempt 2 failed for peer localhost:10002: Socket closed
+May 18, 2025 11:47:54 PM com.consensus.RaftConsensus lambda$getOrCreateSocket$5
+WARNING: Connection attempt 1 failed for peer localhost:10002: Connection refused: getsockopt
+May 18, 2025 11:47:54 PM com.consensus.RaftConsensus lambda$getOrCreateSocket$5
+WARNING: Connection attempt 2 failed for peer localhost:10002: Socket closed
+May 18, 2025 11:47:54 PM com.consensus.RaftConsensus lambda$getOrCreateSocket$5
+WARNING: Connection attempt 3 failed for peer localhost:10002: Socket closed
+May 18, 2025 11:47:54 PM com.consensus.RaftConsensus lambda$startElectionTimer$2
+INFO: Node node2 starting election for term 15
+May 18, 2025 11:47:54 PM com.consensus.RaftConsensus startElection
+INFO: Node node2 became candidate for term 15
+May 18, 2025 11:47:54 PM com.consensus.RaftConsensus sendMessage
+WARNING: Error sending message to peer localhost:10000: An established connection was aborted by the software in your host machine
+May 18, 2025 11:47:54 PM com.consensus.RaftConsensus lambda$getOrCreateSocket$5
+WARNING: Connection attempt 1 failed for peer localhost:10002: Connection refused: getsockopt
+May 18, 2025 11:47:54 PM com.consensus.RaftConsensus lambda$getOrCreateSocket$5
+WARNING: Connection attempt 3 failed for peer localhost:10002: Socket closed
+May 18, 2025 11:47:54 PM com.consensus.RaftConsensus lambda$getOrCreateSocket$5
+WARNING: Connection attempt 1 failed for peer localhost:10002: Connection refused: getsockopt
+May 18, 2025 11:47:54 PM com.consensus.RaftConsensus lambda$getOrCreateSocket$5
+WARNING: Connection attempt 2 failed for peer localhost:10002: Socket closed
+May 18, 2025 11:47:54 PM com.consensus.RaftConsensus lambda$startElectionTimer$2
+INFO: Node node1 starting election for term 15
+May 18, 2025 11:47:54 PM com.consensus.RaftConsensus startElection
+INFO: Node node1 became candidate for term 15
+May 18, 2025 11:47:54 PM com.consensus.RaftConsensus sendMessage
+WARNING: Error sending message to peer localhost:10001: An established connection was aborted by the software in your host machine
+May 18, 2025 11:47:54 PM com.consensus.RaftConsensus lambda$getOrCreateSocket$5
+WARNING: Connection attempt 2 failed for peer localhost:10002: Socket closed
+May 18, 2025 11:47:54 PM com.consensus.RaftConsensus lambda$getOrCreateSocket$5
+WARNING: Connection attempt 3 failed for peer localhost:10002: Socket closed
+May 18, 2025 11:47:55 PM com.consensus.RaftConsensus lambda$getOrCreateSocket$5
+WARNING: Connection attempt 3 failed for peer localhost:10002: Socket closed
+May 18, 2025 11:47:55 PM com.consensus.RaftConsensus lambda$getOrCreateSocket$5
+WARNING: Connection attempt 1 failed for peer localhost:10002: Connection refused: getsockopt
+May 18, 2025 11:47:55 PM com.consensus.RaftConsensus lambda$getOrCreateSocket$5
+WARNING: Connection attempt 1 failed for peer localhost:10002: Connection refused: getsockopt
+May 18, 2025 11:47:55 PM com.consensus.RaftConsensus lambda$startElectionTimer$2
+INFO: Node node2 starting election for term 16
+May 18, 2025 11:47:55 PM com.consensus.RaftConsensus startElection
+INFO: Node node2 became candidate for term 16
+May 18, 2025 11:47:55 PM com.consensus.RaftConsensus handleRequestVote
+INFO: Node node1 updated term to 16
+May 18, 2025 11:47:55 PM com.consensus.RaftConsensus handleRequestVote
+INFO: Node node1 granted vote to node2 for term 16
+May 18, 2025 11:47:55 PM com.consensus.RaftConsensus lambda$startElection$3
+INFO: Node node2 received vote from localhost:10000
+May 18, 2025 11:47:55 PM com.consensus.RaftConsensus lambda$getOrCreateSocket$5
+WARNING: Connection attempt 2 failed for peer localhost:10002: Socket closed
+May 18, 2025 11:47:55 PM com.consensus.RaftConsensus lambda$getOrCreateSocket$5
+WARNING: Connection attempt 2 failed for peer localhost:10002: Socket closed
+May 18, 2025 11:47:55 PM com.consensus.RaftConsensus lambda$getOrCreateSocket$5
+WARNING: Connection attempt 3 failed for peer localhost:10002: Socket closed
+May 18, 2025 11:47:55 PM com.consensus.RaftConsensus lambda$getOrCreateSocket$5
+WARNING: Connection attempt 3 failed for peer localhost:10002: Socket closed
+May 18, 2025 11:47:55 PM com.consensus.RaftConsensus lambda$startElectionTimer$2
+INFO: Node node1 starting election for term 17
+May 18, 2025 11:47:55 PM com.consensus.RaftConsensus startElection
+INFO: Node node1 became candidate for term 17
+May 18, 2025 11:47:55 PM com.consensus.RaftConsensus lambda$getOrCreateSocket$5
+WARNING: Connection attempt 1 failed for peer localhost:10002: Connection refused: getsockopt
+May 18, 2025 11:47:55 PM com.consensus.RaftConsensus handleRequestVote
+INFO: Node node2 updated term to 17
+May 18, 2025 11:47:55 PM com.consensus.RaftConsensus handleRequestVote
+INFO: Node node2 granted vote to node1 for term 17
+May 18, 2025 11:47:55 PM com.consensus.RaftConsensus lambda$startElection$3
+INFO: Node node1 received vote from localhost:10001
+May 18, 2025 11:47:55 PM com.consensus.RaftConsensus lambda$getOrCreateSocket$5
+WARNING: Connection attempt 2 failed for peer localhost:10002: Socket closed
+May 18, 2025 11:47:55 PM com.consensus.RaftConsensus lambda$getOrCreateSocket$5
+WARNING: Connection attempt 1 failed for peer localhost:10002: Connection refused: getsockopt
+May 18, 2025 11:47:55 PM com.consensus.RaftConsensus lambda$getOrCreateSocket$5
+WARNING: Connection attempt 2 failed for peer localhost:10002: Socket closed
+May 18, 2025 11:47:55 PM com.consensus.RaftConsensus lambda$getOrCreateSocket$5
+WARNING: Connection attempt 3 failed for peer localhost:10002: Socket closed
+May 18, 2025 11:47:55 PM com.consensus.RaftConsensus lambda$startElectionTimer$2
+INFO: Node node2 starting election for term 18
+May 18, 2025 11:47:55 PM com.consensus.RaftConsensus startElection
+INFO: Node node2 became candidate for term 18
+May 18, 2025 11:47:55 PM com.consensus.RaftConsensus sendMessage
+WARNING: Error sending message to peer localhost:10000: An established connection was aborted by the software in your host machine
+May 18, 2025 11:47:55 PM com.consensus.RaftConsensus lambda$getOrCreateSocket$5
+WARNING: Connection attempt 1 failed for peer localhost:10002: Connection refused: getsockopt
+May 18, 2025 11:47:55 PM com.consensus.RaftConsensus lambda$getOrCreateSocket$5
+WARNING: Connection attempt 3 failed for peer localhost:10002: Socket closed
+May 18, 2025 11:47:55 PM com.consensus.RaftConsensus lambda$getOrCreateSocket$5
+WARNING: Connection attempt 1 failed for peer localhost:10002: Connection refused: getsockopt
+May 18, 2025 11:47:55 PM com.consensus.RaftConsensus lambda$getOrCreateSocket$5
+WARNING: Connection attempt 2 failed for peer localhost:10002: Socket closed
+May 18, 2025 11:47:56 PM com.consensus.RaftConsensus lambda$getOrCreateSocket$5
+WARNING: Connection attempt 2 failed for peer localhost:10002: Socket closed
+May 18, 2025 11:47:56 PM com.consensus.RaftConsensus lambda$getOrCreateSocket$5
+WARNING: Connection attempt 3 failed for peer localhost:10002: Socket closed
+May 18, 2025 11:47:56 PM com.consensus.RaftConsensus lambda$getOrCreateSocket$5
+WARNING: Connection attempt 3 failed for peer localhost:10002: Socket closed
+May 18, 2025 11:47:56 PM com.consensus.RaftConsensus lambda$startElectionTimer$2
+INFO: Node node2 starting election for term 19
+May 18, 2025 11:47:56 PM com.consensus.RaftConsensus startElection
+INFO: Node node2 became candidate for term 19
+May 18, 2025 11:47:56 PM com.consensus.RaftConsensus lambda$getOrCreateSocket$5
+WARNING: Connection attempt 1 failed for peer localhost:10002: Connection refused: getsockopt
+May 18, 2025 11:47:56 PM com.consensus.RaftConsensus lambda$getOrCreateSocket$5
+WARNING: Connection attempt 1 failed for peer localhost:10000: Connection refused: getsockopt
+May 18, 2025 11:47:56 PM com.consensus.RaftConsensus stop
+INFO: Raft node node1 stopped
+May 18, 2025 11:47:56 PM com.consensus.RaftConsensus lambda$getOrCreateSocket$5
+WARNING: Connection attempt 1 failed for peer localhost:10002: Connection refused: getsockopt
+May 18, 2025 11:47:56 PM com.consensus.RaftConsensus lambda$startElection$3
+WARNING: Error requesting vote from localhost:10002: Task java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask@35b8b38b[Not completed, task = java.util.concurrent.Executors$RunnableAdapter@7485b9b0[Wrapped task = com.consensus.RaftConsensus$$Lambda/0x000001ec810b4238@70ba23f8]] rejected from java.util.concurrent.ScheduledThreadPoolExecutor@223f3642[Terminated, pool size = 0, active threads = 0, queued tasks = 0, completed tasks = 45]
+May 18, 2025 11:47:56 PM com.consensus.RaftConsensus lambda$getOrCreateSocket$5
+WARNING: Connection attempt 1 failed for peer localhost:10002: Connection refused: getsockopt
+May 18, 2025 11:47:56 PM com.consensus.RaftConsensus lambda$startElection$3
+WARNING: Error requesting vote from localhost:10002: Task java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask@5ef66de[Not completed, task = java.util.concurrent.Executors$RunnableAdapter@b2899cb[Wrapped task = com.consensus.RaftConsensus$$Lambda/0x000001ec810b4238@70ba23f8]] rejected from java.util.concurrent.ScheduledThreadPoolExecutor@223f3642[Terminated, pool size = 0, active threads = 0, queued tasks = 0, completed tasks = 45]
+May 18, 2025 11:47:56 PM com.consensus.RaftConsensus lambda$getOrCreateSocket$5
+WARNING: Connection attempt 1 failed for peer localhost:10002: Connection refused: getsockopt
+May 18, 2025 11:47:56 PM com.consensus.RaftConsensus lambda$startElection$3
+WARNING: Error requesting vote from localhost:10002: Task java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask@26d28670[Not completed, task = java.util.concurrent.Executors$RunnableAdapter@28157d02[Wrapped task = com.consensus.RaftConsensus$$Lambda/0x000001ec810b4238@70ba23f8]] rejected from java.util.concurrent.ScheduledThreadPoolExecutor@223f3642[Terminated, pool size = 0, active threads = 0, queued tasks = 0, completed tasks = 45]
+May 18, 2025 11:47:56 PM com.consensus.RaftConsensus lambda$getOrCreateSocket$5
+WARNING: Connection attempt 1 failed for peer localhost:10002: Connection refused: getsockopt
+May 18, 2025 11:47:56 PM com.consensus.RaftConsensus lambda$startElection$3
+WARNING: Error requesting vote from localhost:10002: Task java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask@18e6e037[Not completed, task = java.util.concurrent.Executors$RunnableAdapter@16210c83[Wrapped task = com.consensus.RaftConsensus$$Lambda/0x000001ec810b4238@70ba23f8]] rejected from java.util.concurrent.ScheduledThreadPoolExecutor@223f3642[Terminated, pool size = 0, active threads = 0, queued tasks = 0, completed tasks = 45]
+May 18, 2025 11:47:56 PM com.consensus.RaftConsensus lambda$getOrCreateSocket$5
+WARNING: Connection attempt 1 failed for peer localhost:10002: Connection refused: getsockopt
+May 18, 2025 11:47:56 PM com.consensus.RaftConsensus lambda$startElection$3
+WARNING: Error requesting vote from localhost:10002: Task java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask@fbf2488[Not completed, task = java.util.concurrent.Executors$RunnableAdapter@178cad7[Wrapped task = com.consensus.RaftConsensus$$Lambda/0x000001ec810b4238@70ba23f8]] rejected from java.util.concurrent.ScheduledThreadPoolExecutor@223f3642[Terminated, pool size = 0, active threads = 0, queued tasks = 0, completed tasks = 45]
+May 18, 2025 11:47:56 PM com.consensus.RaftConsensus lambda$getOrCreateSocket$5
+WARNING: Connection attempt 2 failed for peer localhost:10000: Socket closed
+May 18, 2025 11:47:56 PM com.consensus.RaftConsensus lambda$getOrCreateSocket$5
+WARNING: Connection attempt 2 failed for peer localhost:10002: Socket closed
+May 18, 2025 11:47:56 PM com.consensus.RaftConsensus lambda$getOrCreateSocket$5
+WARNING: Connection attempt 3 failed for peer localhost:10000: Socket closed
+May 18, 2025 11:47:56 PM com.consensus.RaftConsensus lambda$getOrCreateSocket$5
+WARNING: Connection attempt 3 failed for peer localhost:10002: Socket closed
+May 18, 2025 11:47:56 PM com.consensus.RaftConsensus stop
+INFO: Raft node node2 stopped
+May 18, 2025 11:47:56 PM com.consensus.RaftConsensus lambda$getOrCreateSocket$5
+WARNING: Connection attempt 1 failed for peer localhost:10000: Connection refused: getsockopt
+May 18, 2025 11:47:56 PM com.consensus.RaftConsensus stop
+INFO: Raft node node3 stopped
+May 18, 2025 11:47:56 PM com.consensus.RaftConsensus lambda$getOrCreateSocket$5
+WARNING: Connection attempt 1 failed for peer localhost:10002: Connection refused: getsockopt
+May 18, 2025 11:47:56 PM com.consensus.RaftConsensus lambda$startElection$3
+WARNING: Error requesting vote from localhost:10002: Task java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask@1e6b223c[Not completed, task = java.util.concurrent.Executors$RunnableAdapter@10acce59[Wrapped task = com.consensus.RaftConsensus$$Lambda/0x000001ec810b4238@70ba23f8]] rejected from java.util.concurrent.ScheduledThreadPoolExecutor@ec756bd[Terminated, pool size = 0, active threads = 0, queued tasks = 0, completed tasks = 51]
+May 18, 2025 11:47:56 PM com.consensus.RaftConsensus lambda$startElection$3
+WARNING: Error requesting vote from localhost:10000: Task java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask@71da893f[Not completed, task = java.util.concurrent.Executors$RunnableAdapter@7f1d78ac[Wrapped task = com.consensus.RaftConsensus$$Lambda/0x000001ec810b4238@70ba23f8]] rejected from java.util.concurrent.ScheduledThreadPoolExecutor@ec756bd[Terminated, pool size = 0, active threads = 0, queued tasks = 0, completed tasks = 51]
+]]></system-err>
+  </testcase>
+  <testcase name="testTermIncrement" classname="com.consensus.LeaderElectionTest" time="1.852"/>
+  <testcase name="testInitialLeaderElection" classname="com.consensus.LeaderElectionTest" time="3.286"/>
+</testsuite>
