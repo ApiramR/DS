@@ -45,7 +45,7 @@ public class RaftConsensus {
     private static final int LEADER_FAILURE_TIMEOUT = 300; // Reduced from 500ms
     private static final int SERVER_SOCKET_TIMEOUT = 50; // Reduced from 100ms
     private static final int ELECTION_CHECK_INTERVAL = 25; // Reduced from 50ms
-    private static final int SOCKET_REUSE_DELAY = 500; // Reduced from 1000ms
+    private static final int SOCKET_REUSE_DELAY = 100; // Reduced from 500ms
     private static final int MIN_ELECTION_INTERVAL = 500; // Reduced from 1000ms
     private static final int SPLIT_VOTE_TIMEOUT = 200; // Timeout for split vote resolution
     private static final Random random = new Random();
@@ -59,6 +59,7 @@ public class RaftConsensus {
     private volatile long lastElectionTime = 0;
     private final ScheduledExecutorService retryExecutor = Executors.newScheduledThreadPool(1);
     private final AtomicInteger electionAttempts = new AtomicInteger(0);
+    private ServerSocket serverSocket;
 
     public RaftConsensus(String id, int port, List<String> peers) {
         this.id = id;
@@ -107,7 +108,8 @@ public class RaftConsensus {
     }
 
     private void startServer() throws IOException {
-        try (ServerSocket serverSocket = new ServerSocket(port)) {
+        try {
+            serverSocket = new ServerSocket(port);
             serverSocket.setReuseAddress(true);
             serverSocket.setSoTimeout(SERVER_SOCKET_TIMEOUT);
             logger.info("Raft node " + id + " listening on port " + port);
@@ -126,6 +128,8 @@ public class RaftConsensus {
                     }
                 }
             }
+        } finally {
+            closeServerSocket();
         }
     }
 
@@ -217,6 +221,8 @@ public class RaftConsensus {
     }
 
     private void startElectionTimer() {
+        if (!running) return;
+        
         electionExecutor.scheduleAtFixedRate(() -> {
             if (!running) return;
             
@@ -226,6 +232,7 @@ public class RaftConsensus {
             // Check for leader failure
             if (isLeader && now - lastHeartbeat.get() > LEADER_FAILURE_TIMEOUT) {
                 synchronized (stateLock) {
+                    if (!running) return;
                     isLeader = false;
                     currentLeader = null;
                     votedFor = null;
@@ -244,7 +251,7 @@ public class RaftConsensus {
 
     private void startElection() {
         synchronized (electionLock) {
-            if (electionInProgress) return;
+            if (electionInProgress || !running) return;
             electionInProgress = true;
             lastElectionTime = System.currentTimeMillis();
         }
@@ -272,19 +279,19 @@ public class RaftConsensus {
             
             // Request votes from all peers
             for (String peer : peers) {
-                new Thread(() -> {
-                    try {
-                        if (requestVote(peer)) {
-                            votes.incrementAndGet();
-                            logger.info("Node " + id + " received vote from " + peer);
-                        }
-                    } catch (Exception e) {
-                        logger.warning("Error requesting vote from " + peer + ": " + e.getMessage());
-                    } finally {
-                        latch.countDown();
-                        responses.incrementAndGet();
+                if (!running) break;
+                
+                try {
+                    if (requestVote(peer)) {
+                        votes.incrementAndGet();
+                        logger.info("Node " + id + " received vote from " + peer);
                     }
-                }).start();
+                } catch (Exception e) {
+                    logger.warning("Error requesting vote from " + peer + ": " + e.getMessage());
+                } finally {
+                    latch.countDown();
+                    responses.incrementAndGet();
+                }
             }
 
             try {
@@ -292,6 +299,8 @@ public class RaftConsensus {
                 boolean success = latch.await(ELECTION_TIMEOUT_MIN, TimeUnit.MILLISECONDS);
                 
                 synchronized (stateLock) {
+                    if (!running) return;
+                    
                     // Check if we still have enough votes and are still in the same term
                     if (success && votes.get() > (peers.size() + 1) / 2 && 
                         term.get() == currentTerm.get() &&
@@ -355,7 +364,7 @@ public class RaftConsensus {
                 socket.setSendBufferSize(8192);
                 
                 int retries = 0;
-                while (retries < MAX_RETRY_ATTEMPTS) {
+                while (retries < MAX_RETRY_ATTEMPTS && running) {
                     try {
                         socket.connect(new InetSocketAddress(host, peerPort), CONNECTION_TIMEOUT);
                         if (socket.isConnected()) {
@@ -364,10 +373,10 @@ public class RaftConsensus {
                     } catch (IOException e) {
                         logger.warning("Connection attempt " + (retries + 1) + " failed for peer " + p + ": " + e.getMessage());
                         retries++;
-                        if (retries < MAX_RETRY_ATTEMPTS) {
+                        if (retries < MAX_RETRY_ATTEMPTS && running) {
                             try {
-                                retryExecutor.schedule(() -> {}, RETRY_DELAY_MS * (retries + 1), TimeUnit.MILLISECONDS).get();
-                            } catch (InterruptedException | ExecutionException ie) {
+                                Thread.sleep(RETRY_DELAY_MS * (retries + 1));
+                            } catch (InterruptedException ie) {
                                 Thread.currentThread().interrupt();
                                 return null;
                             }
@@ -537,29 +546,29 @@ public class RaftConsensus {
     }
 
     private void sendHeartbeats() {
-        if (!isLeader) return;
+        if (!isLeader || !running) return;
         
         for (String peer : peers) {
-            new Thread(() -> {
-                try {
-                    String message = String.format("APPEND_ENTRIES:%d:%s:%d:%d:%d",
-                        currentTerm.get(), id,
-                        nextIndex.get(peer) - 1,
-                        currentTerm.get(),
-                        matchIndex.getOrDefault(id, 0));
+            if (!running) break;
+            
+            try {
+                String message = String.format("APPEND_ENTRIES:%d:%s:%d:%d:%d",
+                    currentTerm.get(), id,
+                    nextIndex.get(peer) - 1,
+                    currentTerm.get(),
+                    matchIndex.getOrDefault(id, 0));
 
-                    if (sendMessage(peer, message, true)) {
-                        synchronized (stateLock) {
-                            if (isLeader) {  // Double check we're still leader
-                                matchIndex.put(peer, nextIndex.get(peer));
-                                nextIndex.put(peer, nextIndex.get(peer) + 1);
-                            }
+                if (sendMessage(peer, message, true)) {
+                    synchronized (stateLock) {
+                        if (isLeader && running) {  // Double check we're still leader and running
+                            matchIndex.put(peer, nextIndex.get(peer));
+                            nextIndex.put(peer, nextIndex.get(peer) + 1);
                         }
                     }
-                } catch (Exception e) {
-                    logger.warning("Error sending heartbeat to " + peer + ": " + e.getMessage());
                 }
-            }).start();
+            } catch (Exception e) {
+                logger.warning("Error sending heartbeat to " + peer + ": " + e.getMessage());
+            }
         }
     }
 
@@ -584,15 +593,18 @@ public class RaftConsensus {
         isLeader = false;
         currentLeader = null;
         
+        // Close server socket first
+        closeServerSocket();
+        
         // Close all peer sockets
         for (String peer : peers) {
             closePeerSocket(peer);
         }
         
         // Shutdown executors
-        heartbeatExecutor.shutdown();
-        electionExecutor.shutdown();
-        retryExecutor.shutdown();
+        heartbeatExecutor.shutdownNow();
+        electionExecutor.shutdownNow();
+        retryExecutor.shutdownNow();
         
         try {
             if (!heartbeatExecutor.awaitTermination(1, TimeUnit.SECONDS)) {
@@ -610,6 +622,13 @@ public class RaftConsensus {
             retryExecutor.shutdownNow();
             Thread.currentThread().interrupt();
         }
+        
+        // Clear all collections
+        peerSockets.clear();
+        socketLocks.clear();
+        nextIndex.clear();
+        matchIndex.clear();
+        lastLogTerm.clear();
         
         logger.info("Raft node " + id + " stopped");
     }
@@ -643,6 +662,21 @@ public class RaftConsensus {
                 if (!isLeader) {
                     votedFor = null;
                     currentLeader = null;
+                }
+            }
+        }
+    }
+
+    private void closeServerSocket() {
+        if (serverSocket != null && !serverSocket.isClosed()) {
+            try {
+                serverSocket.close();
+                // Wait before reusing the port
+                Thread.sleep(SOCKET_REUSE_DELAY);
+            } catch (IOException | InterruptedException e) {
+                logger.warning("Error closing server socket: " + e.getMessage());
+                if (e instanceof InterruptedException) {
+                    Thread.currentThread().interrupt();
                 }
             }
         }
